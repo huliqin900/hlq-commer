@@ -53,6 +53,7 @@ public class UserController extends BaseController{
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		System.out.println(username);
+		System.out.println(password);
         return "register";  
     }
 }
