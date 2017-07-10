@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>选课系统</title>
+<title>登录</title>
 </head>
 
 <body class="login">

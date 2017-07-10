@@ -51,7 +51,6 @@ public class UserController extends BaseController{
     public Object submitlogin(HttpServletRequest request){  
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		System.out.println(username);
 		System.out.println(password);
         return "register";  
     }
