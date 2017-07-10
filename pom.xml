@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>hlq-commer</groupId>
+  <artifactId>hlq-commer</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>hlq-commer</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jdk.version>1.7</jdk.version>  
+    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>  
+    <maven-resources-plugin.version>2.6</maven-resources-plugin.version>  
+    <org.mybatis.generator.version>1.3.2</org.mybatis.generator.version>  
+    <mybatis.version>3.1.1</mybatis.version>  
+    <mybatis-spring.version>1.2.0</mybatis-spring.version>  
+    <dubbo.version>2.4.9</dubbo.version>  
+    <zookeeper.version>3.4.5</zookeeper.version>  
+    <zkclient.version>0.1</zkclient.version>  
+    <com.alibaba.druid.version>0.2.6</com.alibaba.druid.version> 
+  </properties>
+  
+  <!-- springboot使用1.4.1.RELEASE版本 -->  
+   <parent>  
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-starter-parent</artifactId>  
+        <version>1.4.1.RELEASE</version>  
+    </parent>  
+    <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!--mybatis分页插件 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>5.0.0</version>
+		</dependency>
+    
+  </dependencies>
+  <build>  
+        <plugins>  
+            <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-compiler-plugin</artifactId>  
+                <configuration>  
+                    <source>${jdk.version}</source>  
+                    <target>${jdk.version}</target>  
+                    <encoding>UTF-8</encoding>  
+                </configuration>  
+  
+            </plugin>  
+            <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-resources-plugin</artifactId>  
+                <configuration>  
+                    <encoding>UTF-8</encoding>  
+                </configuration>  
+            </plugin>  
+        </plugins>  
+    </build> 
+  
+  <modules>
+    <module>hlq-commer-app</module>
+    <module>hlq-commer-web</module>
+    <module>hlq-commer-common</module>
+    <module>hlq-commer-service</module>
+  </modules>
+</project>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.commer.app.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.commer.app.entity.User" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="userNumber" property="usernumber" jdbcType="BIGINT" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="classid" property="classid" jdbcType="BIGINT" />
+    <result column="credit" property="credit" jdbcType="INTEGER" />
+    <result column="identity" property="identity" jdbcType="INTEGER" />
+    <result column="imageUrl" property="imageurl" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, userNumber, username, password, classid, credit, identity, imageUrl, sex, createTime
+  </sql>
+  <select id="selectByPrimaryKey" resultType="com.commer.app.entity.User" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.commer.app.entity.User" >
+    insert into user (id, userNumber, username, 
+      password, classid, credit, 
+      identity, imageUrl, sex, 
+      createTime)
+    values (#{id,jdbcType=BIGINT}, #{usernumber,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{classid,jdbcType=BIGINT}, #{credit,jdbcType=INTEGER}, 
+      #{identity,jdbcType=INTEGER}, #{imageurl,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.commer.app.entity.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="usernumber != null" >
+        userNumber,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="classid != null" >
+        classid,
+      </if>
+      <if test="credit != null" >
+        credit,
+      </if>
+      <if test="identity != null" >
+        identity,
+      </if>
+      <if test="imageurl != null" >
+        imageUrl,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="usernumber != null" >
+        #{usernumber,jdbcType=BIGINT},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="classid != null" >
+        #{classid,jdbcType=BIGINT},
+      </if>
+      <if test="credit != null" >
+        #{credit,jdbcType=INTEGER},
+      </if>
+      <if test="identity != null" >
+        #{identity,jdbcType=INTEGER},
+      </if>
+      <if test="imageurl != null" >
+        #{imageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.commer.app.entity.User" >
+    update user
+    <set >
+      <if test="usernumber != null" >
+        userNumber = #{usernumber,jdbcType=BIGINT},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="classid != null" >
+        classid = #{classid,jdbcType=BIGINT},
+      </if>
+      <if test="credit != null" >
+        credit = #{credit,jdbcType=INTEGER},
+      </if>
+      <if test="identity != null" >
+        identity = #{identity,jdbcType=INTEGER},
+      </if>
+      <if test="imageurl != null" >
+        imageUrl = #{imageurl,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.commer.app.entity.User" >
+    update user
+    set userNumber = #{usernumber,jdbcType=BIGINT},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      classid = #{classid,jdbcType=BIGINT},
+      credit = #{credit,jdbcType=INTEGER},
+      identity = #{identity,jdbcType=INTEGER},
+      imageUrl = #{imageurl,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      createTime = #{createtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

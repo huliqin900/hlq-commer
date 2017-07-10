@@ -1,0 +1,4 @@
+com\commer\app\service\impl\UserServiceImpl.class
+com\commer\app\App.class
+com\commer\app\mapper\UserMapper.class
+META-INF\spring-configuration-metadata.json
