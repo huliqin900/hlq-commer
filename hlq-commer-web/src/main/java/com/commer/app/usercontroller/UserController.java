@@ -47,7 +47,6 @@ public class UserController extends BaseController{
         return "login";  
     }
 	
-	@SuppressWarnings("unused")
 	@RequestMapping("/submitlogin")
     public Object submitlogin(HttpServletRequest request){  
 		String username = request.getParameter("username");
