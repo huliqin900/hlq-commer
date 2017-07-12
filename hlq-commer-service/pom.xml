@@ -1,31 +1,32 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>hlq-commer</groupId>
-    <artifactId>hlq-commer</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>hlq-commer-service</groupId>
-  <artifactId>hlq-commer-service</artifactId>
-  <name>hlq-commer-service</name>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-    <dependency>  
-        <groupId>hlq-commer-common</groupId>  
-        <artifactId>hlq-commer-common</artifactId>  
-        <version>0.0.1-SNAPSHOT</version>  
-    </dependency>
-    
-    <dependency>  
-        <groupId>hlq-commer-app</groupId>  
-        <artifactId>hlq-commer-app</artifactId>  
-        <version>0.0.1-SNAPSHOT</version>  
-    </dependency>
-    <!-- 集成Dubbo -->
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>hlq-commer</groupId>
+		<artifactId>hlq-commer</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>hlq-commer-service</groupId>
+	<artifactId>hlq-commer-service</artifactId>
+	<name>hlq-commer-service</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>hlq-commer-common</groupId>
+			<artifactId>hlq-commer-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>hlq-commer-app</groupId>
+			<artifactId>hlq-commer-app</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- 集成Dubbo -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
@@ -58,7 +59,7 @@
 			<artifactId>zkclient</artifactId>
 			<version>0.1</version>
 		</dependency>
-		
+
 		<!-- mysql驱动 -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -70,7 +71,14 @@
 			<artifactId>druid</artifactId>
 			<version>1.0.18</version>
 		</dependency>
-		
+
+		<!-- test -->
+		<dependency>
+			<groupId>org.wisdom-framework</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.34_1</version>
+		</dependency>
+
 		<!-- spring-boot mybatis依赖 -->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
@@ -84,5 +92,5 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-  </dependencies>
+	</dependencies>
 </project>

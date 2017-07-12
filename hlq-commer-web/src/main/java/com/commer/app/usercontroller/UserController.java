@@ -49,6 +49,8 @@ public class UserController extends BaseController{
 	
 	@RequestMapping("/submitlogin")
     public Object submitlogin(HttpServletRequest request){  
+		int i = 0;
+		int b = 1;
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		System.out.println(password);
