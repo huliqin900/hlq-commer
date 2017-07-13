@@ -22,6 +22,14 @@
     from user
     where id = #{id,jdbcType=BIGINT}
   </select>
+  
+  <select id="checkAdministratorsUser" resultType="com.commer.app.entity.User">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where userNumber = #{username,jdbcType=BIGINT} and password = #{password,jdbcType=VARCHAR} and identity=0
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from user
     where id = #{id,jdbcType=BIGINT}

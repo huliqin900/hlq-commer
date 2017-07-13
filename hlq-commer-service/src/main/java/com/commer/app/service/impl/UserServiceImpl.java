@@ -17,4 +17,8 @@ public class UserServiceImpl implements UserService{
 		return userMapper.selectByPrimaryKey(id);
 	}
 
+	@Override
+	public User checkAdministratorsUser(String username, String password) {
+		return userMapper.checkAdministratorsUser(username, password);
+	}
 }
