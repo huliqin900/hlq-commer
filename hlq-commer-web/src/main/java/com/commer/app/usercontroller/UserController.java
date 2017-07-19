@@ -7,10 +7,12 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.commer.app.UserService.UserService;
 import com.commer.app.entity.User;
 
-@RestController  
+@RestController 
 @RequestMapping("/user") 
 public class UserController extends BaseController{
 	private static Logger logger = Logger.getLogger(UserController.class);  
@@ -47,13 +49,13 @@ public class UserController extends BaseController{
         return user;  
     }  
 	
-	@RequestMapping("/login")
+	@GetMapping("/login")
     public ModelAndView login() {
 		return new ModelAndView("login");
     }
 	
 	@RequestMapping("/submitBackstageLogin")
-    public Object submitlogin(HttpServletRequest request,Model model){  
+    public Object submitlogin(HttpServletRequest request,HttpSession session,HttpServletResponse response) throws IOException{  
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		User user = userService.checkAdministratorsUser(username, password);
@@ -62,7 +64,18 @@ public class UserController extends BaseController{
 		if (user == null) {
 			return false;
 		}
-		model.addAttribute("user", user);
-        return "index";  
+		session.setAttribute("user", user);
+        return true;  
+    }
+	
+	@RequestMapping("/customer_index")
+    public ModelAndView BackstageIndex(HttpServletRequest request, HttpSession session) {
+		
+		//判断如果服务器存在用户session的话，不需要重新登录来访问该(配置拦截设置)
+		if (session.getAttribute("user") != null)
+            return new ModelAndView("customer_index");
+
+        // 跳转登录页面
+		return new ModelAndView("login");
     }
 }
