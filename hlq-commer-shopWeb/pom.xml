@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>hlq-commer</groupId>
+    <artifactId>hlq-commer</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <groupId>hlq-commer-shopWeb</groupId>
+  <artifactId>hlq-commer-shopWeb</artifactId>
+  <name>hlq-commer-shopWeb Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>  
+        <groupId>hlq-commer-common</groupId>  
+        <artifactId>hlq-commer-common</artifactId>  
+        <version>0.0.1-SNAPSHOT</version>  
+    </dependency>
+    
+    <dependency>  
+        <groupId>hlq-commer-app</groupId>  
+        <artifactId>hlq-commer-app</artifactId>  
+        <version>0.0.1-SNAPSHOT</version>  
+    </dependency>
+    
+    <!-- web模块 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- 集成Dubbo -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.6</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.1</version>
+		</dependency>
+
+		<dependency>  
+	      <groupId>javax.servlet</groupId>  
+	      <artifactId>jstl</artifactId>  
+	      <version>1.2</version>  
+	    </dependency>
+	    
+	    <dependency>  
+      <groupId>org.apache.tomcat.embed</groupId>  
+      <artifactId>tomcat-embed-jasper</artifactId>  
+      <scope>provided</scope>  
+    </dependency> 
+	    
+		<!-- 重启部署依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- thymeleaf 模板 -->
+		 <!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency> --> 
+		
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+    
+  </dependencies>
+  <build>
+    <finalName>hlq-commer-shopWeb</finalName>
+  </build>
+</project>
