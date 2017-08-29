@@ -78,6 +78,7 @@
   <modules>
     <module>hlq-commer-app</module>
     <module>hlq-commer-web</module>
+    <module>hlq-commer-shopWeb</module>
     <module>hlq-commer-common</module>
     <module>hlq-commer-service</module>
   </modules>
